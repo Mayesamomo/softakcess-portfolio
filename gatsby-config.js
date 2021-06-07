@@ -46,12 +46,12 @@ module.exports = {
         // Possibility to login with a strapi user, when content types are not publically available (optional).
       },
     },
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        gatsbyRemarkPlugins: [{ resolve: "gatsby-remark-images" }],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-mdx`,
+    //   options: {
+    //     gatsbyRemarkPlugins: [{ resolve: "gatsby-remark-images" }],
+    //   },
+    // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
