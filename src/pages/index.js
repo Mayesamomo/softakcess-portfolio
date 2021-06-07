@@ -1,4 +1,5 @@
 import React from "react"
+import AOS from "aos";
 import { graphql } from "gatsby"
 import Hero from "../components/Hero"
 import Services from "../components/Services"
@@ -7,6 +8,9 @@ import Projects from "../components/Projects"
 import Seo from "../components/Seo"
 import Blogs from "../components/Blogs"
 import Layout from "../components/Layout"
+// internal imports
+import "aos/dist/aos.css";
+AOS.init();
 const IndexPage = ({ data }) => {
   const {
     allStrapiProjects: { nodes: projects },
@@ -16,28 +20,33 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <main>
-        <Hero />
+        <Hero 
+         data-aos="zoom-out-up"
+         data-aos-delay="50"
+         data-aos-duration="2000"
+         data-aos-easing="ease-in-out-cubic"
+        />
         <Services
-         data-sal="slide-right"
-         data-sal-duration="2000"
-         // data-sal-delay="300"
-         data-sal-easing="ease"
+         data-aos="fade-zoom-in"
+         data-aos-easing="ease-in-back"
+         data-aos-delay="300"
+         data-aos-offset="0"
          />
         <Jobs />
         <Projects title="featured projects" showLink projects={projects}
-         data-sal="slide-down"
-         data-sal-duration="2000"
-         // data-sal-delay="300"
-         data-sal-easing="ease"
+          data-aos="flip-left"
+          data-aos-delay="50"
+          data-aos-duration="2000"
+          data-aos-easing="ease-in-out-cubic"
          />
         <Blogs
           title="Latest Blogs"
           showLink
           blogs={blogs}
-          data-sal="slide-left"
-          data-sal-duration="3s"
-          // data-sal-delay="300"
-          data-sal-easing="ease"
+          data-aos="zoom-out-down"
+          data-aos-delay="50"
+          data-aos-duration="2000"
+          data-aos-easing="ease-in-out-cubic"
         />
       </main>
     </Layout>
