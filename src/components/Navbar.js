@@ -1,5 +1,5 @@
 import React from "react"
-import softakcess from "../assets/images/softakcess.png"
+import softakcess from "../assets/images/SoftAkcess.svg"
 import { FaAlignRight } from "react-icons/fa"
 import pageLinks from "../constants/links"
 import { Link } from "gatsby"

@@ -2,13 +2,14 @@ import React from "react"
 import { graphql } from "gatsby"
 import Title from "../components/Title"
 import Seo from "../components/Seo"
+import Layout from '../components/Layout'
 import styled from 'styled-components'
 const About = ({ data }) => {
   const {
     strapiAbout: { title, image, info, stack },
   } = data
   return (
-    <>
+    <Layout>
       <Seo title="About" />
       <Wrapper>
       <div className="about-page">
@@ -26,7 +27,7 @@ const About = ({ data }) => {
         </div>
       </div>
       </Wrapper>
-    </>
+    </Layout>
   )
 }
 const Wrapper = styled.section`

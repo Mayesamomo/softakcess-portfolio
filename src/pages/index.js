@@ -3,10 +3,10 @@ import { graphql } from "gatsby"
 import Hero from "../components/Hero"
 import Services from "../components/Services"
 import Jobs from "../components/Jobs"
-import Projects from '../components/Projects'
+import Projects from "../components/Projects"
 import Seo from "../components/Seo"
 import Blogs from "../components/Blogs"
-import Layout from '../components/Layout'
+import Layout from "../components/Layout"
 const IndexPage = ({ data }) => {
   const {
     allStrapiProjects: { nodes: projects },
@@ -17,10 +17,28 @@ const IndexPage = ({ data }) => {
       <Seo title="Home" />
       <main>
         <Hero />
-        <Services />
+        <Services
+         data-sal="slide-right"
+         data-sal-duration="2000"
+         // data-sal-delay="300"
+         data-sal-easing="ease"
+         />
         <Jobs />
-        <Projects title="featured projects" showLink projects={projects} />
-        <Blogs title="Latest Blogs" showLink  blogs={blogs} />
+        <Projects title="featured projects" showLink projects={projects}
+         data-sal="slide-down"
+         data-sal-duration="2000"
+         // data-sal-delay="300"
+         data-sal-easing="ease"
+         />
+        <Blogs
+          title="Latest Blogs"
+          showLink
+          blogs={blogs}
+          data-sal="slide-left"
+          data-sal-duration="3s"
+          // data-sal-delay="300"
+          data-sal-easing="ease"
+        />
       </main>
     </Layout>
   )
@@ -50,7 +68,7 @@ export const query = graphql`
       totalCount
     }
 
-    allStrapiBlogs(sort: {fields: date, order: DESC}, limit: 3) {
+    allStrapiBlogs(sort: { fields: date, order: DESC }, limit: 3) {
       nodes {
         slug
         content

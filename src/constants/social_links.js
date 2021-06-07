@@ -17,7 +17,7 @@ const data = [
   {
     id: 2,
     icon: <FaLinkedin className="social-icon"></FaLinkedin>,
-    url: "https://www.linkedin.com/pulse/5-functions-management-henri-fayol-kalpesh-shah/",
+    url: "https://www.linkedin.com/in/michael-ayesa-momo-981b64160/",
   },
   {
     id: 3,

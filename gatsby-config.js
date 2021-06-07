@@ -23,6 +23,8 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-remark-prismjs`,
+    `gatsby-plugin-scroll-reveal`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -30,18 +32,11 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `posts`,
-    //     path: `${__dirname}/src/posts`,
-    //   },
-    // },
-
+  
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://localhost:1337`,
+        apiURL:process.env.API_URL || "https://softakcess-strapi.herokuapp.com/" ,
         queryLimit: 1000, // Default to 100
         contentTypes: [`jobs`, `projects`, `blogs`],
         singleTypes: [`about`],
@@ -97,5 +92,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: process.env.TRACKING_ID
+      },
+    },
+
   ],
 }
